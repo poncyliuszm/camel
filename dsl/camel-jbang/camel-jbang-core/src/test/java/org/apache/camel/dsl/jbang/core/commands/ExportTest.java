@@ -143,6 +143,7 @@ class ExportTest {
         Assertions.assertEquals("route", model.getArtifactId());
         Assertions.assertEquals("1.0.0", model.getVersion());
 
+        System.out.println("shouldExportCustomKamelet: rt = " + rt + " dependencies = " + model.getDependencies());
         if (rt == RuntimeType.main) {
             Assertions.assertTrue(containsDependency(model.getDependencies(), "org.apache.camel", "camel-kamelet", null));
             Assertions
@@ -183,6 +184,7 @@ class ExportTest {
         Assertions.assertEquals("route", model.getArtifactId());
         Assertions.assertEquals("1.0.0", model.getVersion());
 
+        System.out.println("shouldExportOfficialKamelet: rt = " + rt + " dependencies = " + model.getDependencies());
         if (rt == RuntimeType.main) {
             Assertions.assertTrue(containsDependency(model.getDependencies(), "org.apache.camel", "camel-kamelet", null));
             Assertions
@@ -221,6 +223,7 @@ class ExportTest {
         Assertions.assertEquals("route", model.getArtifactId());
         Assertions.assertEquals("1.0.0", model.getVersion());
 
+        System.out.println("shouldExportSecret: rt = " + rt + " dependencies = " + model.getDependencies());
         if (rt == RuntimeType.main) {
             Assertions.assertTrue(containsDependency(model.getDependencies(), "org.apache.camel", "camel-kubernetes", null));
         } else if (rt == RuntimeType.springBoot) {
@@ -247,6 +250,7 @@ class ExportTest {
         Assertions.assertEquals("pipe", model.getArtifactId());
         Assertions.assertEquals("1.0.0", model.getVersion());
 
+        System.out.println("shouldExportPipeOfficialAndCustomKamelet: rt = " + rt + " dependencies = " + model.getDependencies());
         if (rt == RuntimeType.main) {
             Assertions.assertTrue(containsDependency(model.getDependencies(), "org.apache.camel", "camel-kamelet", null));
             Assertions
